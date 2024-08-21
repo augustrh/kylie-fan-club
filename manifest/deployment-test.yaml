@@ -2,7 +2,7 @@ apiVersion: v1
 kind: List
 items:
 - apiVersion: apps.openshift.io/v1
-  kind: DeploymentConfig
+  kind: Deployment
   metadata:
     labels:
       app: kylie-fan-club
@@ -13,11 +13,11 @@ items:
     replicas: 3
     revisionHistoryLimit: 10
     selector:
-      deploymentconfig: kylie-fan-club
+      deployment: kylie-fan-club
     template:
       metadata:
         labels:
-          deploymentconfig: kylie-fan-club
+          deployment: kylie-fan-club
       spec:
         containers:
         - image: kylie-fan-club
